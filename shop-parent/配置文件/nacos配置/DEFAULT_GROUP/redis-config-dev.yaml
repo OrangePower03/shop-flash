@@ -1,0 +1,4 @@
+spring: 
+  redis:
+    host: 你的redis的Ip地址
+    port: 6379

@@ -1,0 +1,2 @@
+rocketmq:
+  name-server: 你的RocketMQ的Ip地址:9876

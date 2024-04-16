@@ -1,0 +1,15 @@
+server:
+  port: 8051
+ribbon:
+  eager-load:
+    enabled: true
+rocketmq:
+  producer:
+    group: pay-group
+alipay:
+  app_id : 
+  merchant_private_key : 
+  alipay_public_key : 
+  sign_type : RSA2
+  charset : utf-8
+  gatewayUrl : https://openapi.alipaydev.com/gateway.do

@@ -1,0 +1,18 @@
+server:
+  port: 8081
+feign:
+  sentinel:
+    enabled: true
+ribbon:
+  eager-load:
+    enabled: true
+  ReadTimeout: 10000            
+  ConnectTimeout: 10000          
+  MaxAutoRetries: 0             
+  MaxAutoRetriesNextServer: 0  
+elasticjob:
+  zookeeper-url: 你的zookeeper的Ip地址:2181
+  group-name: shop-job-group
+jobCron:
+  initSeckillProduct: 0 0/1 * * * ?
+  userCache: 0 0/1 * * * ?

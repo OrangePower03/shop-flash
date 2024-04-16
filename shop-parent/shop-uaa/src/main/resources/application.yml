@@ -1,0 +1,29 @@
+nacos:
+  address: 1.117.70.65:8848
+  username: nacos
+  password: nacos_start!!!
+
+spring:
+  application:
+    name: uaa-service
+  cloud:
+    nacos:
+      username: ${nacos.username}
+      password: ${nacos.password}
+      config:
+        namespace: shop-flashsale
+        server-addr: ${nacos.address}
+        file-extension: yaml
+        shared-configs:
+          - data-id: redis-config-dev.yaml
+          - data-id: rocketmq-config-dev.yaml
+      discovery:
+        server-addr: ${nacos.address}
+        username: ${nacos.username}
+        password: ${nacos.password}
+
+  config:
+    import:
+      - optional:nacos:uaa-service-dev.yaml
+      - optional:nacos:rocketmq-config-dev.yaml
+      - optional:nacos:redis-config-dev.yaml

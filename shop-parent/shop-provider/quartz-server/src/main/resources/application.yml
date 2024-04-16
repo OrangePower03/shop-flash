@@ -1,0 +1,32 @@
+nacos:
+  address: 1.117.70.65:8848
+  username: nacos
+  password: nacos_start!!!
+
+spring:
+  application:
+    name: job-service
+
+
+  cloud:
+    nacos:
+      config:
+        server-addr: ${nacos.address}
+        username: ${nacos.username}
+        password: ${nacos.password}
+        file-extension: yaml
+        refresh-enabled: true
+        namespace: shop-flashsale
+        shared-configs:
+          - data-id: redis-config-dev.yaml
+
+      discovery:
+        server-addr: ${nacos.address}
+        username: ${nacos.username}
+        password: ${nacos.password}
+
+
+  config:
+    import:
+      - optional:nacos:job-service-dev.yaml
+      - optional:nacos:redis-config-dev.yaml

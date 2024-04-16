@@ -1,0 +1,31 @@
+nacos:
+  address: 1.117.70.65:8848
+  username: nacos
+  password: nacos_start!!!
+
+
+
+spring:
+  application:
+    name: product-service
+
+
+  cloud:
+    nacos:
+      config:
+        server-addr: ${nacos.address}
+        username: ${nacos.username}
+        password: ${nacos.password}
+        file-extension: yaml
+        refresh-enabled: true
+        namespace: shop-flashsale
+
+      discovery:
+        server-addr: ${nacos.address}
+        username: ${nacos.username}
+        password: ${nacos.password}
+
+
+  config:
+    import:
+      - optional:nacos:product-service-dev.yaml

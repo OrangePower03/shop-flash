@@ -1,0 +1,16 @@
+server:
+  port: 8021
+canal:
+  server: canal的IP地址:11111
+  destination: example
+logging:
+  level:
+    root: info
+    top:
+      javatool:
+        canal:
+          client:
+            client:
+              AbstractCanalClient: error
+
+
